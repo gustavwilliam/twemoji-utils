@@ -77,6 +77,7 @@
                   <img
                     src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f604.svg"
                     alt="Emoji"
+                    class="w-full h-full"
                   />
                 </div>
                 <div class="mt-3 text-center">
