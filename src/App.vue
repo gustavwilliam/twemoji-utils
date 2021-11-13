@@ -1,7 +1,7 @@
 <template>
   <Menu
     :navigation="[
-      { name: 'Home', href: '#', current: true },
+      { name: 'Home', href: '#/', current: true },
       {
         name: 'GitHub',
         href: 'https://github.com/gustavwilliam/twemoji-utils',

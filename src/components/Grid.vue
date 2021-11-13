@@ -18,7 +18,7 @@
         <a
           v-for="product in products"
           :key="product.codepoint"
-          :href="'#'"
+          :href="'#/'"
           class="group"
           @click="
             this.$parent.$refs.modal.open = true;
