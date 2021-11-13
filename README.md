@@ -1,4 +1,4 @@
-# twemoji-browser
+# twemoji-utils
 
 ## Project setup
 ```

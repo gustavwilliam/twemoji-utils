@@ -33,12 +33,12 @@
             <img
               class="block lg:hidden h-8 w-auto"
               src="../assets/logo/logo-full-color-light.svg"
-              alt="Twemoji Browser"
+              alt="Twemoji Utils"
             />
             <img
               class="hidden lg:block h-8 w-auto"
               src="../assets/logo/logo-full-color-light.svg"
-              alt="Twemoji Browser"
+              alt="Twemoji Utils"
             />
           </div>
           <div class="hidden sm:block sm:ml-6">
