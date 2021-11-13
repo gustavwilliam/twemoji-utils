@@ -82,7 +82,7 @@
                     "
                     @error="
                       $event.target.src = fallbackImage;
-                      unavailable();
+                      open = false;
                     "
                     alt="Emoji"
                     class="w-full h-full"
