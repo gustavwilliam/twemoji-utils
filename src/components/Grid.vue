@@ -20,7 +20,10 @@
           :key="product.codepoint"
           :href="'#'"
           class="group"
-          @click="this.$parent.$refs.modal.open = true"
+          @click="
+            this.$parent.$refs.modal.open = true;
+            this.$parent.$refs.modal.codepoint = product.codepoint;
+          "
         >
           <div class="w-full aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
             <img
@@ -30,6 +33,7 @@
                 '.svg'
               "
               :alt="'Unavailable'"
+              onerror="this.onerror=null;this.src='../assets/unavailable.svg'"
               class="
                 w-full
                 h-full

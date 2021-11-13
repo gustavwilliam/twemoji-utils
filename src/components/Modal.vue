@@ -75,7 +75,11 @@
                   "
                 >
                   <img
-                    src="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f604.svg"
+                    :src="
+                      'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                      codepoint +
+                      '.svg'
+                    "
                     alt="Emoji"
                     class="w-full h-full"
                   />
@@ -125,7 +129,11 @@
                   focus:ring-blue-twitter
                   sm:ml-3 sm:w-auto sm:text-sm
                 "
-                href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f604.svg"
+                :href="
+                  'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                  codepoint +
+                  '.svg'
+                "
                 target="_blank"
                 download
                 @click="open = false"
@@ -155,7 +163,11 @@
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
-                href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f604.png"
+                :href="
+                  'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
+                  codepoint +
+                  '.png'
+                "
                 target="_blank"
                 download
                 @click="open = false"
@@ -218,9 +230,11 @@ export default {
   },
   setup() {
     const open = ref(false);
+    const codepoint = ref("");
 
     return {
       open,
+      codepoint,
     };
   },
 };
