@@ -77,7 +77,7 @@
                   <img
                     :src="
                       'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
-                      codepoint +
+                      codepoint.replace(/\s+/g, '-') +
                       '.svg'
                     "
                     @error="
