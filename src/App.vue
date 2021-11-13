@@ -8,7 +8,7 @@
     ]"
   />
   <Grid :products="obj" />
-  <Modal />
+  <Modal ref="modal" />
 </template>
 
 <script>

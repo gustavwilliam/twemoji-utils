@@ -103,9 +103,9 @@
                 sm:px-6 sm:flex sm:flex-row sm:justify-center
               "
             >
-              <button
-                type="button"
+              <a
                 class="
+                  cursor-pointer
                   w-full
                   inline-flex
                   justify-center
@@ -125,13 +125,16 @@
                   focus:ring-blue-twitter
                   sm:ml-3 sm:w-auto sm:text-sm
                 "
+                href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f604.svg"
+                target="_blank"
+                download
                 @click="open = false"
               >
                 SVG
-              </button>
-              <button
-                type="button"
+              </a>
+              <a
                 class="
+                  cursor-pointer
                   mt-3
                   w-full
                   inline-flex
@@ -152,10 +155,13 @@
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
+                href="https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/1f604.png"
+                target="_blank"
+                download
                 @click="open = false"
               >
                 PNG
-              </button>
+              </a>
               <button
                 type="button"
                 class="
@@ -176,7 +182,7 @@
                   focus:outline-none
                   focus:ring-2
                   focus:ring-offset-2
-                  focus:ring-indigo-500
+                  focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
                 @click="open = false"
@@ -211,7 +217,7 @@ export default {
     TransitionRoot,
   },
   setup() {
-    const open = ref(true);
+    const open = ref(false);
 
     return {
       open,

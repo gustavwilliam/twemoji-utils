@@ -20,6 +20,7 @@
           :key="product.codepoint"
           :href="'#'"
           class="group"
+          @click="this.$parent.$refs.modal.open = true"
         >
           <div class="w-full aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
             <img
