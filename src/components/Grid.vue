@@ -17,14 +17,18 @@
       >
         <a
           v-for="product in products"
-          :key="product.id"
-          :href="product.href"
+          :key="product.codepoint"
+          :href="'#'"
           class="group"
         >
           <div class="w-full aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
             <img
-              :src="product.imageSrc"
-              :alt="product.imageAlt"
+              :src="
+                'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                product.codepoint.replace(/\s+/g, '-') +
+                '.svg'
+              "
+              :alt="'Unavailable'"
               class="
                 w-full
                 h-full
@@ -34,10 +38,10 @@
             />
           </div>
           <h3 class="mt-4 text-sm text-gray-700">
-            {{ product.name }}
+            {{ capitalize(product.name) }}
           </h3>
           <p class="mt-1 text-lg font-medium text-gray-900">
-            {{ product.codepoint }}
+            {{ product.codepoint.toUpperCase() }}
           </p>
         </a>
       </div>
@@ -49,6 +53,11 @@
 export default {
   props: {
     products: Array,
+  },
+  methods: {
+    capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    },
   },
 };
 </script>
