@@ -98,13 +98,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 
-const navigation = [
-  { name: "Dashboard", href: "#", current: true },
-  { name: "Team", href: "#", current: false },
-  { name: "Projects", href: "#", current: false },
-  { name: "Calendar", href: "#", current: false },
-];
-
 export default {
   components: {
     Disclosure,
@@ -113,10 +106,8 @@ export default {
     MenuIcon,
     XIcon,
   },
-  setup() {
-    return {
-      navigation,
-    };
+  props: {
+    navigation: Array,
   },
 };
 </script>
