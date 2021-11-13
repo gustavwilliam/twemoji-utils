@@ -135,7 +135,7 @@
                 "
                 :href="
                   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
-                  codepoint +
+                  codepoint.replace(/\s+/g, '-') +
                   '.svg'
                 "
                 target="_blank"
@@ -169,7 +169,7 @@
                 "
                 :href="
                   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
-                  codepoint +
+                  codepoint.replace(/\s+/g, '-') +
                   '.png'
                 "
                 target="_blank"
