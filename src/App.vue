@@ -101,14 +101,16 @@
       },
     ]"
   />
+  <Modal />
 </template>
 
 <script>
 import Menu from "./components/Navbar.vue";
 import Grid from "./components/Grid.vue";
+import Modal from "./components/Modal.vue";
 
 export default {
   name: "App",
-  components: { Menu, Grid },
+  components: { Menu, Grid, Modal },
 };
 </script>

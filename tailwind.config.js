@@ -8,6 +8,14 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        blue: {
+          twitter: {
+            DEFAULT: "#1DA1F2",
+            dark: "#0d8ddb",
+          }
+        }
+      },
     },
   },
   variants: {
