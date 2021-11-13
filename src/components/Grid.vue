@@ -32,8 +32,8 @@
                 product.codepoint.replace(/\s+/g, '-') +
                 '.svg'
               "
-              :alt="'Unavailable'"
-              onerror="this.onerror=null;this.src='../assets/unavailable.svg'"
+              @error.stop="$event.target.src = fallbackImage"
+              :alt="product.name"
               class="
                 w-full
                 h-full
@@ -63,6 +63,11 @@ export default {
     capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
+  },
+  data() {
+    return {
+      fallbackImage: require("../assets/unavailable.svg"),
+    };
   },
 };
 </script>

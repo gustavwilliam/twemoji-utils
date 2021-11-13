@@ -80,6 +80,10 @@
                       codepoint +
                       '.svg'
                     "
+                    @error="
+                      $event.target.src = fallbackImage;
+                      unavailable();
+                    "
                     alt="Emoji"
                     class="w-full h-full"
                   />
@@ -235,6 +239,11 @@ export default {
     return {
       open,
       codepoint,
+    };
+  },
+  data() {
+    return {
+      fallbackImage: require("../assets/unavailable.svg"),
     };
   },
 };
