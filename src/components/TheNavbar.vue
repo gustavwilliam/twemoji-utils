@@ -108,7 +108,13 @@ export default {
   },
 
   props: {
-    navigation: Array,
+    navigation: {
+      type: Array,
+      required: true,
+      validator(value) {
+        return value.length >= 1;
+      },
+    },
   },
 };
 </script>

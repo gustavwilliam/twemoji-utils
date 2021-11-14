@@ -57,7 +57,13 @@
 <script>
 export default {
   props: {
-    products: Array,
+    products: {
+      type: Array,
+      required: true,
+      validator(value) {
+        return value.length >= 1;
+      },
+    },
   },
 
   methods: {
