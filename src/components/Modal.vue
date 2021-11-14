@@ -137,9 +137,8 @@
                   font-medium
                   text-white
                   hover:bg-blue-twitter-dark
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-offset-2
+                  focus:outline-none focus:ring-2 focus:ring-offset-2
+                  dark:ring-offset-gray-800
                   focus:ring-blue-twitter
                   sm:ml-3 sm:w-auto sm:text-sm
                 "
@@ -172,9 +171,8 @@
                   font-medium
                   text-white
                   hover:bg-blue-twitter-dark
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-offset-2
+                  focus:outline-none focus:ring-2 focus:ring-offset-2
+                  dark:ring-offset-gray-800
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
@@ -211,9 +209,8 @@
                   dark:text-gray-300
                   hover:bg-gray-50
                   dark:hover:bg-gray-800
-                  focus:outline-none
-                  focus:ring-2
-                  focus:ring-offset-2
+                  focus:outline-none focus:ring-2 focus:ring-offset-2
+                  dark:ring-offset-gray-800
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
