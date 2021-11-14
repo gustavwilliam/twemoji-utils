@@ -254,6 +254,7 @@ export default {
     TransitionChild,
     TransitionRoot,
   },
+
   setup() {
     const open = ref(false);
     const codepoint = ref("");
@@ -263,11 +264,13 @@ export default {
       codepoint,
     };
   },
+
   data() {
     return {
       fallbackImage: require("../assets/unavailable.svg"),
     };
   },
+
   methods: {
     downloadResource(url, filename) {
       if (!filename) filename = url.split("\\").pop().split("/").pop();

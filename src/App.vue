@@ -1,5 +1,5 @@
 <template>
-  <Menu
+  <TheNavbar
     :navigation="[
       { name: 'Home', href: '#/', current: true },
       {
@@ -9,19 +9,19 @@
       },
     ]"
   />
-  <Grid :products="obj" />
-  <Modal ref="modal" />
+  <EmojiGrid :products="obj" />
+  <EmojiDownloadModal ref="modal" />
 </template>
 
 <script>
-import Menu from "./components/Navbar.vue";
-import Grid from "./components/Grid.vue";
-import Modal from "./components/Modal.vue";
+import TheNavbar from "./components/TheNavbar.vue";
+import EmojiGrid from "./components/EmojiGrid.vue";
+import EmojiDownloadModal from "./components/EmojiDownloadModal.vue";
 import emojiData from "./assets/emojidata-s.json";
 
 export default {
   name: "App",
-  components: { Menu, Grid, Modal },
+  components: { TheNavbar, EmojiGrid, EmojiDownloadModal },
   data() {
     return {
       obj: emojiData,

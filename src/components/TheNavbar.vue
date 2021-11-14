@@ -106,6 +106,7 @@ export default {
     MenuIcon,
     XIcon,
   },
+
   props: {
     navigation: Array,
   },
