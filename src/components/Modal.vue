@@ -133,14 +133,15 @@
                   focus:ring-blue-twitter
                   sm:ml-3 sm:w-auto sm:text-sm
                 "
-                :href="
-                  'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
-                  codepoint.replace(/\s+/g, '-') +
-                  '.svg'
+                href="#/"
+                @click="
+                  downloadResource(
+                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                      codepoint.replace(/\s+/g, '-') +
+                      '.svg'
+                  );
+                  open = false;
                 "
-                target="_blank"
-                download
-                @click="open = false"
               >
                 SVG
               </a>
@@ -167,14 +168,15 @@
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
-                :href="
-                  'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
-                  codepoint.replace(/\s+/g, '-') +
-                  '.png'
+                href="#/"
+                @click="
+                  downloadResource(
+                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
+                      codepoint.replace(/\s+/g, '-') +
+                      '.png'
+                  );
+                  open = false;
                 "
-                target="_blank"
-                download
-                @click="open = false"
               >
                 PNG
               </a>
@@ -224,6 +226,15 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 
+function forceDownload(blob, filename) {
+  var a = document.createElement("a");
+  a.download = filename;
+  a.href = blob;
+  document.body.appendChild(a); // For Firefox
+  a.click();
+  a.remove();
+}
+
 export default {
   components: {
     Dialog,
@@ -245,6 +256,23 @@ export default {
     return {
       fallbackImage: require("../assets/unavailable.svg"),
     };
+  },
+  methods: {
+    downloadResource(url, filename) {
+      if (!filename) filename = url.split("\\").pop().split("/").pop();
+      fetch(url, {
+        headers: new Headers({
+          Origin: location.origin,
+        }),
+        mode: "cors",
+      })
+        .then((response) => response.blob())
+        .then((blob) => {
+          let blobUrl = window.URL.createObjectURL(blob);
+          forceDownload(blobUrl, filename);
+        })
+        .catch((e) => console.error(e));
+    },
   },
 };
 </script>
