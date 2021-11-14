@@ -52,6 +52,7 @@
               inline-block
               align-bottom
               bg-white
+              dark:bg-gray-900
               rounded-xl
               text-left
               overflow-hidden
@@ -61,7 +62,9 @@
               sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
             "
           >
-            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div
+              class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
+            >
               <div class="sm:flex flex-col items-center">
                 <div
                   class="
@@ -91,7 +94,13 @@
                 <div class="mt-3 text-center">
                   <DialogTitle
                     as="h3"
-                    class="text-lg leading-6 font-medium text-gray-900"
+                    class="
+                      text-lg
+                      leading-6
+                      font-medium
+                      text-gray-900
+                      dark:text-gray-50
+                    "
                   >
                     Download emoji
                   </DialogTitle>
@@ -106,6 +115,7 @@
             <div
               class="
                 bg-gray-50
+                dark:bg-gray-800
                 px-4
                 py-3
                 sm:px-6 sm:flex sm:flex-row sm:justify-center
@@ -189,14 +199,18 @@
                   justify-center
                   rounded-md
                   border border-gray-300
+                  dark:border-gray-600
                   shadow-sm
                   px-4
                   py-2
                   bg-white
+                  dark:bg-gray-700
                   text-base
                   font-medium
                   text-gray-700
+                  dark:text-gray-300
                   hover:bg-gray-50
+                  dark:hover:bg-gray-800
                   focus:outline-none
                   focus:ring-2
                   focus:ring-offset-2

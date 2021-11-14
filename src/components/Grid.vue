@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white dark:bg-gray-900">
     <div
       class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8"
     >
@@ -42,10 +42,10 @@
               "
             />
           </div>
-          <h3 class="mt-4 text-sm text-gray-700">
+          <h3 class="mt-4 text-sm text-gray-700 dark:text-gray-400">
             {{ capitalize(product.name) }}
           </h3>
-          <p class="mt-1 text-lg font-medium text-gray-900">
+          <p class="mt-1 text-lg font-medium text-gray-900 dark:text-gray-100">
             {{ product.codepoint.toUpperCase() }}
           </p>
         </a>
