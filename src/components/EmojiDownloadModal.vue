@@ -106,7 +106,7 @@
                   </DialogTitle>
                   <div class="mt-2">
                     <p class="text-sm text-gray-500">
-                      Select your preferred format.
+                      Select your preferred format to begin the download.
                     </p>
                   </div>
                 </div>

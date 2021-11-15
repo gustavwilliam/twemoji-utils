@@ -80,9 +80,7 @@
                     Choose size
                   </DialogTitle>
                   <div class="mt-2">
-                    <p class="text-sm text-gray-500">
-                      Select a resolution to begin the download.
-                    </p>
+                    <p class="text-sm text-gray-500">Select a resolution.</p>
                   </div>
                 </div>
               </div>
