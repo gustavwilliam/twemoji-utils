@@ -1,9 +1,9 @@
 <template>
-  <TransitionRoot as="template" :show="open">
+  <TransitionRoot as="template" :show="isOpen">
     <Dialog
       as="div"
-      class="fixed z-10 inset-0 overflow-y-auto"
-      @close="open = false"
+      class="fixed z-20 inset-0 overflow-y-auto"
+      @close="closeModal"
     >
       <div
         class="
@@ -59,39 +59,14 @@
               shadow-xl
               transform
               transition-all
-              sm:my-8 sm:align-middle sm:max-w-lg sm:w-full
+              sm:my-8 sm:align-middle sm:max-w-sm sm:w-full
             "
           >
             <div
               class="bg-white dark:bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4"
             >
               <div class="sm:flex flex-col items-center">
-                <div
-                  class="
-                    mx-auto
-                    flex-shrink-0 flex
-                    items-center
-                    justify-center
-                    h-24
-                    w-24
-                    sm:mx-0
-                  "
-                >
-                  <img
-                    :src="
-                      'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
-                      codepoint.replace(/\s+/g, '-') +
-                      '.svg'
-                    "
-                    @error="
-                      $event.target.src = fallbackImage;
-                      open = false;
-                    "
-                    alt="Emoji"
-                    class="w-full h-full"
-                  />
-                </div>
-                <div class="mt-3 text-center">
+                <div class="text-center">
                   <DialogTitle
                     as="h3"
                     class="
@@ -102,11 +77,11 @@
                       dark:text-gray-50
                     "
                   >
-                    Download emoji
+                    Choose size
                   </DialogTitle>
                   <div class="mt-2">
                     <p class="text-sm text-gray-500">
-                      Select your preferred format.
+                      Select a resolution to begin the download.
                     </p>
                   </div>
                 </div>
@@ -145,25 +120,26 @@
                 href="#/"
                 @click="
                   downloadResource(
-                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
                       codepoint.replace(/\s+/g, '-') +
-                      '.svg'
+                      '.png'
                   );
-                  open = false;
+                  closeModal();
                 "
               >
-                SVG
+                72x72
               </a>
               <a
                 class="
                   cursor-pointer
-                  mt-3
                   w-full
                   inline-flex
                   justify-center
                   rounded-md
                   border border-transparent
                   shadow-sm
+                  sm:ml-3
+                  mt-3
                   px-4
                   py-2
                   bg-blue-twitter
@@ -174,88 +150,99 @@
                   focus:outline-none focus:ring-2 focus:ring-offset-2
                   dark:ring-offset-gray-800
                   focus:ring-blue-twitter
-                  sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
+                  sm:mt-0 sm:w-auto sm:text-sm
                 "
                 href="#/"
-                @click="this.$refs.submodal.openModal(codepoint)"
+                @click="
+                  // downloadResource(
+                  //   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
+                  //     codepoint.replace(/\s+/g, '-') +
+                  //     '.png'
+                  // );
+                  closeModal()
+                "
               >
-                PNG
+                256x256
               </a>
-              <button
-                type="button"
+              <a
                 class="
-                  mt-3
+                  cursor-pointer
                   w-full
                   inline-flex
                   justify-center
                   rounded-md
-                  border border-gray-300
-                  dark:border-gray-600
+                  border border-transparent
                   shadow-sm
+                  sm:ml-3
+                  mt-3
                   px-4
                   py-2
-                  bg-white
-                  dark:bg-gray-700
+                  bg-blue-twitter
                   text-base
                   font-medium
-                  text-gray-700
-                  dark:text-gray-300
-                  hover:bg-gray-50
-                  dark:hover:bg-gray-800
+                  text-white
+                  hover:bg-blue-twitter-dark
                   focus:outline-none focus:ring-2 focus:ring-offset-2
                   dark:ring-offset-gray-800
                   focus:ring-blue-twitter
-                  sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
+                  sm:mt-0 sm:w-auto sm:text-sm
                 "
-                @click="open = false"
-                ref="cancelButtonRef"
+                href="#/"
+                @click="
+                  // downloadResource(
+                  //   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
+                  //     codepoint.replace(/\s+/g, '-') +
+                  //     '.png'
+                  // );
+                  closeModal()
+                "
               >
-                Cancel
-              </button>
+                512x512
+              </a>
             </div>
           </div>
         </TransitionChild>
       </div>
-      <EmojiDownloadSubModal ref="submodal" />
     </Dialog>
   </TransitionRoot>
 </template>
 
 <script>
+// mt-3 sm:mt-0
+
 import { ref } from "vue";
 import {
+  TransitionRoot,
+  TransitionChild,
   Dialog,
   DialogOverlay,
   DialogTitle,
-  TransitionChild,
-  TransitionRoot,
 } from "@headlessui/vue";
-import EmojiDownloadSubModal from "./EmojiDownloadSubModal.vue";
 import downloadResource from "./downloadResource.js";
 
 export default {
   components: {
+    TransitionRoot,
+    TransitionChild,
     Dialog,
     DialogOverlay,
     DialogTitle,
-    TransitionChild,
-    TransitionRoot,
-    EmojiDownloadSubModal,
   },
 
   setup() {
-    const open = ref(false);
+    const isOpen = ref(false);
     const codepoint = ref("");
 
     return {
-      open,
+      isOpen,
       codepoint,
-    };
-  },
-
-  data() {
-    return {
-      fallbackImage: require("../assets/unavailable.svg"),
+      closeModal() {
+        isOpen.value = false;
+      },
+      openModal(code) {
+        isOpen.value = true;
+        this.codepoint = code;
+      },
     };
   },
 
