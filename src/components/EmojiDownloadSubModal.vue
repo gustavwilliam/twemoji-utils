@@ -152,12 +152,15 @@
                 "
                 href="#/"
                 @click="
-                  // downloadResource(
-                  //   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
-                  //     codepoint.replace(/\s+/g, '-') +
-                  //     '.png'
-                  // );
-                  closeModal()
+                  downloadEmojiPngFromUrl(
+                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                      codepoint.replace(/\s+/g, '-') +
+                      '.svg',
+                    256,
+                    256,
+                    codepoint + '.png'
+                  );
+                  closeModal();
                 "
               >
                 256x256
@@ -187,12 +190,15 @@
                 "
                 href="#/"
                 @click="
-                  // downloadResource(
-                  //   'https://raw.githubusercontent.com/twitter/twemoji/master/assets/72x72/' +
-                  //     codepoint.replace(/\s+/g, '-') +
-                  //     '.png'
-                  // );
-                  closeModal()
+                  downloadEmojiPngFromUrl(
+                    'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
+                      codepoint.replace(/\s+/g, '-') +
+                      '.svg',
+                    512,
+                    512,
+                    codepoint + '.png'
+                  );
+                  closeModal();
                 "
               >
                 512x512
@@ -217,6 +223,8 @@ import {
   DialogTitle,
 } from "@headlessui/vue";
 import downloadResource from "./downloadResource.js";
+import pngFromURL from "./converterSvgToPng.js";
+import forceDownload from "./downloadForce.js";
 
 export default {
   components: {
@@ -246,6 +254,11 @@ export default {
 
   methods: {
     downloadResource,
+    pngFromURL,
+    forceDownload,
+    async downloadEmojiPngFromUrl(url, width, height, name) {
+      forceDownload(await pngFromURL(url, width, height), name);
+    },
   },
 };
 </script>

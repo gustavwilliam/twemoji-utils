@@ -1,11 +1,4 @@
-function forceDownload(blob, filename) {
-  var a = document.createElement("a");
-  a.download = filename;
-  a.href = blob;
-  document.body.appendChild(a); // For Firefox
-  a.click();
-  a.remove();
-}
+import forceDownload from "./downloadForce.js"
 
 function downloadResource(url, filename) {
   if (!filename) filename = url.split("\\").pop().split("/").pop();
