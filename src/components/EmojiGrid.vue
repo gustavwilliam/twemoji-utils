@@ -32,7 +32,7 @@
                 product.codepoint.replace(/\s+/g, '-') +
                 '.svg'
               "
-              @error.stop="$event.target.src = fallbackImage"
+              @error="$event.target.src = fallbackImage"
               :alt="product.name"
               class="
                 w-full
