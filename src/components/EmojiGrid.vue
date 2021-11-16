@@ -20,6 +20,7 @@
           :key="product.codepoint"
           :href="'#/'"
           class="group"
+          v-show="showEmojiBox(product.codepoint)"
           @click="
             this.$parent.$refs.modal.open = true;
             this.$parent.$refs.modal.codepoint = product.codepoint;
@@ -32,7 +33,10 @@
                 product.codepoint.replace(/\s+/g, '-') +
                 '.svg'
               "
-              @error="$event.target.src = fallbackImage"
+              @error="
+                $event.target.src = fallbackImage;
+                errorImages.push(product.codepoint);
+              "
               :alt="product.name"
               class="
                 w-full
@@ -70,11 +74,15 @@ export default {
     capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
+    showEmojiBox(codepoint) {
+      return !this.errorImages.includes(codepoint);
+    },
   },
 
   data() {
     return {
       fallbackImage: require("../assets/unavailable.svg"),
+      errorImages: [],
     };
   },
 };
