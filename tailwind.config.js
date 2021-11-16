@@ -19,7 +19,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      padding: ['first', 'last'],
+      borderRadius: ['first', 'last'],
+    },
   },
   plugins: [
     require('@tailwindcss/aspect-ratio'),
