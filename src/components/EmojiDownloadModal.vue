@@ -230,8 +230,8 @@ import {
   TransitionChild,
   TransitionRoot,
 } from "@headlessui/vue";
-import EmojiDownloadSubModal from "./EmojiDownloadSubModal.vue";
-import downloadResource from "./downloadResource.js";
+import EmojiDownloadSubModal from "@/components/EmojiDownloadSubModal.vue";
+import downloadResource from "@/components/downloadResource.js";
 
 export default {
   components: {
@@ -255,7 +255,7 @@ export default {
 
   data() {
     return {
-      fallbackImage: require("../assets/unavailable.svg"),
+      fallbackImage: require("@/assets/unavailable.svg"),
     };
   },
 

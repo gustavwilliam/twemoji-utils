@@ -81,7 +81,7 @@ export default {
 
   data() {
     return {
-      fallbackImage: require("../assets/unavailable.svg"),
+      fallbackImage: require("@/assets/unavailable.svg"),
       errorImages: [],
     };
   },

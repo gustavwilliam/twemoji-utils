@@ -1,12 +1,12 @@
 import { createApp } from 'vue/dist/vue.esm-bundler'
 import { createRouter, createWebHashHistory } from 'vue-router'
-import App from './App.vue'
-import './index.css'
-import './assets/tailwind.css'
+import Home from '@/views/Home.vue'
+import '@/index.css'
+import '@/assets/tailwind.css'
 
 
 const routes = [
-    { path: '/', component: App },
+    { path: '/', component: Home },
 ]
 
 const router = createRouter({
