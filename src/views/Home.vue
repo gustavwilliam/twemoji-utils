@@ -10,7 +10,6 @@
     ]"
   />
   <EmojiGrid :products="obj" />
-  <PaginationIndicator />
   <EmojiDownloadModal ref="modal" />
 </template>
 
@@ -18,12 +17,11 @@
 import TheNavbar from "@/components/TheNavbar.vue";
 import EmojiGrid from "@/components/EmojiGrid.vue";
 import EmojiDownloadModal from "@/components/EmojiDownloadModal.vue";
-import PaginationIndicator from "@/components/Pagination/PaginationIndicator.vue";
 import emojiData from "@/assets/emojidata-s.json";
 
 export default {
   name: "Home",
-  components: { TheNavbar, EmojiGrid, EmojiDownloadModal, PaginationIndicator },
+  components: { TheNavbar, EmojiGrid, EmojiDownloadModal },
   data() {
     return {
       obj: emojiData,
