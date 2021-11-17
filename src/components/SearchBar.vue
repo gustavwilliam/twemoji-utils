@@ -6,6 +6,7 @@
     <div class="mt-2 relative rounded-md shadow-sm max-w-sm">
       <input
         type="text"
+        autocomplete="off"
         name="searchBar"
         id="searchBar"
         :value="modelValue"
