@@ -1,7 +1,7 @@
 <template>
   <TheNavbar
     :navigation="[
-      { name: 'Home', href: '#/', current: true },
+      { name: 'Home', href: '/', current: true },
       {
         name: 'GitHub',
         href: 'https://github.com/gustavwilliam/twemoji-utils',
@@ -22,7 +22,7 @@ import PaginationIndicator from "@/components/Pagination/PaginationIndicator.vue
 import emojiData from "@/assets/emojidata-s.json";
 
 export default {
-  name: "App",
+  name: "Home",
   components: { TheNavbar, EmojiGrid, EmojiDownloadModal, PaginationIndicator },
   data() {
     return {
