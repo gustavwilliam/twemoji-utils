@@ -1,5 +1,5 @@
 import { createApp } from 'vue/dist/vue.esm-bundler'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import '@/index.css'
 import '@/assets/tailwind.css'
@@ -10,7 +10,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 
