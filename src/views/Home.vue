@@ -15,7 +15,11 @@
       @open-modal="this.$refs.modal.openModal($event)"
       :products="paginatedEmojiList"
     />
-    <PaginationIndicator />
+    <PaginationIndicator
+      :currentPage="currentPage"
+      :numberOfPages="numberOfPages"
+      @set-pagination-index="currentPage = $event"
+    />
   </TheMainContentFrame>
   <EmojiDownloadModal ref="modal" />
 </template>
@@ -26,7 +30,7 @@ import TheMainContentFrame from "@/components/TheMainContentFrame.vue";
 import EmojiGrid from "@/components/EmojiGrid.vue";
 import EmojiDownloadModal from "@/components/EmojiDownloadModal.vue";
 import SearchBar from "@/components/SearchBar.vue";
-import PaginationIndicator from "@/components/Pagination/PaginationIndicator";
+import PaginationIndicator from "@/components/Pagination/PaginationIndicator.vue";
 import emojiData from "@/assets/emojidata-s.json";
 
 export default {
