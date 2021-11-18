@@ -12,7 +12,7 @@
   <TheMainContentFrame>
     <SearchBar v-model="searchText" label="Find an emoji" />
     <EmojiGrid
-      @open-modal="this.$refs.modal.openModal($event)"
+      @open-modal="$refs.modal.openModal($event)"
       :products="paginatedEmojiList"
     />
     <PaginationIndicator
