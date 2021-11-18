@@ -20,6 +20,7 @@
             :key="index"
             :index="index"
             :active="index === currentPageUserVersion"
+            v-show="showPage(index - 1)"
             @click="setPageIndex(index - 1)"
           />
           <!-- Subtract 1 from `index` to adjust for 1-indexing -->
@@ -76,6 +77,9 @@ export default {
     setPageIndex(index) {
       console.log(`Setting page: ${index}`);
       this.$emit("set-pagination-index", index);
+    },
+    showPage(index) {
+      return this.currentPage - 2 <= index && index <= this.currentPage + 2;
     },
   },
 };
