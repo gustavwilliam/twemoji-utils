@@ -1,8 +1,14 @@
 <template>
   <div class="px-4 py-3 flex items-center justify-between sm:px-6">
     <div class="flex-1 flex justify-between sm:hidden">
-      <PaginationMobileButton content="Previous" />
-      <PaginationMobileButton content="Next" />
+      <PaginationMobileButton
+        content="Previous"
+        @click="setPageIndex(currentPage - 1)"
+      />
+      <PaginationMobileButton
+        content="Next"
+        @click="setPageIndex(currentPage + 1)"
+      />
     </div>
     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-around">
       <div>
