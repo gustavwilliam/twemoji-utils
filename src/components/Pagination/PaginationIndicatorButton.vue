@@ -33,7 +33,7 @@ export default {
     link: {
       type: String,
       required: false,
-      default: "#/",
+      default: "#",
     },
     minWidth: {
       type: Boolean,
