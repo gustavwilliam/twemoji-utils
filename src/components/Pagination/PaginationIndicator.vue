@@ -110,6 +110,14 @@ export default {
       this.$emit("set-pagination-index", index);
     },
     showPage(index) {
+      if (
+        (this.currentPage <= 1 && index <= 4) ||
+        (this.numberOfPages - this.currentPage <= 2 &&
+          index >= this.numberOfPages - 5)
+      ) {
+        return true; // Always show 5 pages, if available
+      }
+
       return this.currentPage - 2 <= index && index <= this.currentPage + 2;
     },
   },
