@@ -69,7 +69,7 @@ export default {
       });
     },
     numberOfPages() {
-      return Math.floor(this.filteredEmojiList.length / this.itemsPerPage);
+      return Math.floor(this.filteredEmojiList.length / this.itemsPerPage) || 1;
     },
     paginatedEmojiList() {
       return this.filteredEmojiList.slice(
