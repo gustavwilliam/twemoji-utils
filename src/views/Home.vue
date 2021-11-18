@@ -31,7 +31,7 @@ import EmojiGrid from "@/components/EmojiGrid.vue";
 import EmojiDownloadModal from "@/components/EmojiDownloadModal.vue";
 import SearchBar from "@/components/SearchBar.vue";
 import PaginationIndicator from "@/components/Pagination/PaginationIndicator.vue";
-import emojiData from "@/assets/emojidata-s.json";
+import emojiData from "@/assets/emojidata.json";
 
 export default {
   name: "Home",
