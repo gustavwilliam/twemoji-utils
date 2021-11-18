@@ -4,15 +4,14 @@
     class="
       relative
       items-center
-      px-4
       py-2
       border
       text-sm
       font-medium
-      first:rounded-l-md first:px-2
-      last:rounded-r-md last:px-2
+      first:rounded-l-md
+      last:rounded-r-md
     "
-    :class="activityClass"
+    :class="activityClass + ' ' + (minWidth ? 'px-2' : 'px-4')"
   >
     {{ index }}
     <slot />
@@ -35,6 +34,11 @@ export default {
       type: String,
       required: false,
       default: "#/",
+    },
+    minWidth: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
   },
 

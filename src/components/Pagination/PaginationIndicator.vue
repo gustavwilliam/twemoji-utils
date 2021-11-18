@@ -10,11 +10,14 @@
           class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
-          <PaginationIndicatorButton @click="setPageIndex(0)">
+          <PaginationIndicatorButton :min-width="true" @click="setPageIndex(0)">
             <span class="sr-only">First</span>
             <ChevronDoubleLeftIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
-          <PaginationIndicatorButton @click="setPageIndex(currentPage - 1)">
+          <PaginationIndicatorButton
+            :min-width="true"
+            @click="setPageIndex(currentPage - 1)"
+          >
             <span class="sr-only">Previous</span>
             <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
@@ -29,11 +32,17 @@
           />
           <!-- Subtract 1 from `index` to adjust for 1-indexing -->
 
-          <PaginationIndicatorButton @click="setPageIndex(currentPage + 1)">
+          <PaginationIndicatorButton
+            @click="setPageIndex(currentPage + 1)"
+            :min-width="true"
+          >
             <span class="sr-only">Next</span>
             <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
-          <PaginationIndicatorButton @click="setPageIndex(numberOfPages - 1)">
+          <PaginationIndicatorButton
+            @click="setPageIndex(numberOfPages - 1)"
+            :min-width="true"
+          >
             <span class="sr-only">Last</span>
             <ChevronDoubleRightIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
@@ -90,7 +99,6 @@ export default {
 
   methods: {
     setPageIndex(index) {
-      console.log(`Setting page: ${index}`);
       this.$emit("set-pagination-index", index);
     },
     showPage(index) {
