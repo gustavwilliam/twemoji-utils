@@ -17,10 +17,7 @@
         :href="'#/'"
         class="group"
         v-show="showEmojiBox(product.codepoint)"
-        @click="
-          this.$parent.$refs.modal.open = true;
-          this.$parent.$refs.modal.codepoint = product.codepoint;
-        "
+        @click="$emit('open-modal', product.codepoint)"
       >
         <div class="w-full aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
           <img
@@ -64,6 +61,7 @@ export default {
       },
     },
   },
+  emits: ["open-modal"],
 
   methods: {
     capitalize(string) {

@@ -1,9 +1,9 @@
 <template>
-  <TransitionRoot as="template" :show="open">
+  <TransitionRoot as="template" :show="isOpen">
     <Dialog
       as="div"
       class="fixed z-10 inset-0 overflow-y-auto"
-      @close="open = false"
+      @close="closeModal"
     >
       <div
         class="
@@ -85,7 +85,7 @@
                     "
                     @error="
                       $event.target.src = fallbackImage;
-                      open = false;
+                      closeModal();
                     "
                     alt="Emoji"
                     class="w-full h-full"
@@ -149,7 +149,7 @@
                       codepoint.replace(/\s+/g, '-') +
                       '.svg'
                   );
-                  open = false;
+                  closeModal();
                 "
               >
                 SVG
@@ -207,7 +207,7 @@
                   focus:ring-blue-twitter
                   sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm
                 "
-                @click="open = false"
+                @click="closeModal"
                 ref="cancelButtonRef"
               >
                 Cancel
@@ -244,12 +244,19 @@ export default {
   },
 
   setup() {
-    const open = ref(false);
+    const isOpen = ref(false);
     const codepoint = ref("");
 
     return {
-      open,
+      isOpen,
       codepoint,
+      closeModal() {
+        isOpen.value = false;
+      },
+      openModal(code) {
+        isOpen.value = true;
+        this.codepoint = code;
+      },
     };
   },
 

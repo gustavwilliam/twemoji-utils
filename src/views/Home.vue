@@ -11,7 +11,10 @@
   />
   <TheMainContentFrame>
     <SearchBar v-model="searchText" label="Find an emoji" />
-    <EmojiGrid :products="filteredEmojiList" />
+    <EmojiGrid
+      @open-modal="this.$refs.modal.openModal($event)"
+      :products="filteredEmojiList"
+    />
   </TheMainContentFrame>
   <EmojiDownloadModal ref="modal" />
 </template>
