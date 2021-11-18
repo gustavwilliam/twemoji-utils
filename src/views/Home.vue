@@ -15,6 +15,7 @@
       @open-modal="this.$refs.modal.openModal($event)"
       :products="paginatedEmojiList"
     />
+    <PaginationIndicator />
   </TheMainContentFrame>
   <EmojiDownloadModal ref="modal" />
 </template>
@@ -25,6 +26,7 @@ import TheMainContentFrame from "@/components/TheMainContentFrame.vue";
 import EmojiGrid from "@/components/EmojiGrid.vue";
 import EmojiDownloadModal from "@/components/EmojiDownloadModal.vue";
 import SearchBar from "@/components/SearchBar.vue";
+import PaginationIndicator from "@/components/Pagination/PaginationIndicator";
 import emojiData from "@/assets/emojidata-s.json";
 
 export default {
@@ -35,6 +37,7 @@ export default {
     EmojiGrid,
     EmojiDownloadModal,
     SearchBar,
+    PaginationIndicator,
   },
 
   data() {
