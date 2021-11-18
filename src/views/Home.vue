@@ -53,6 +53,12 @@ export default {
     };
   },
 
+  watch: {
+    searchText: function () {
+      this.currentPage = 0;
+    },
+  },
+
   computed: {
     filteredEmojiList() {
       return this.gridData.filter((item) => {
