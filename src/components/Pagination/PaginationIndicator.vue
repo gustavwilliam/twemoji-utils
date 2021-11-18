@@ -1,8 +1,14 @@
 <template>
   <div class="px-4 py-3 flex items-center justify-between sm:px-6">
     <div class="flex-1 flex justify-between sm:hidden">
-      <PaginationMobileButton content="Previous" />
-      <PaginationMobileButton content="Next" />
+      <PaginationMobileButton
+        content="Previous"
+        @click="setPageIndex(currentPage - 1)"
+      />
+      <PaginationMobileButton
+        content="Next"
+        @click="setPageIndex(currentPage + 1)"
+      />
     </div>
     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-around">
       <div>
@@ -10,20 +16,41 @@
           class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
-          <PaginationIndicatorButton>
+          <PaginationIndicatorButton :min-width="true" @click="setPageIndex(0)">
+            <span class="sr-only">First</span>
+            <ChevronDoubleLeftIcon class="h-5 w-5" aria-hidden="true" />
+          </PaginationIndicatorButton>
+          <PaginationIndicatorButton
+            :min-width="true"
+            @click="setPageIndex(currentPage - 1)"
+          >
             <span class="sr-only">Previous</span>
             <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
-          <PaginationIndicatorButton :index="1" :active="true" />
-          <PaginationIndicatorButton :index="2" />
-          <PaginationIndicatorButton :index="3" :showOnMobile="false" />
-          <PaginationIndicatorButton>...</PaginationIndicatorButton>
-          <PaginationIndicatorButton :index="8" :showOnMobile="false" />
-          <PaginationIndicatorButton :index="9" />
-          <PaginationIndicatorButton :index="10" />
-          <PaginationIndicatorButton>
+
+          <PaginationIndicatorButton
+            v-for="index in numberOfPages"
+            :key="index"
+            :index="index"
+            :active="index === currentPageUserVersion"
+            v-show="showPage(index - 1)"
+            @click="setPageIndex(index - 1)"
+          />
+          <!-- Subtract 1 from `index` to adjust for 1-indexing -->
+
+          <PaginationIndicatorButton
+            @click="setPageIndex(currentPage + 1)"
+            :min-width="true"
+          >
             <span class="sr-only">Next</span>
             <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
+          </PaginationIndicatorButton>
+          <PaginationIndicatorButton
+            @click="setPageIndex(numberOfPages - 1)"
+            :min-width="true"
+          >
+            <span class="sr-only">Last</span>
+            <ChevronDoubleRightIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
         </nav>
       </div>
@@ -32,7 +59,12 @@
 </template>
 
 <script>
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/solid";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+} from "@heroicons/vue/solid";
 import PaginationIndicatorButton from "./PaginationIndicatorButton.vue";
 import PaginationMobileButton from "./PaginationMobileButton.vue";
 
@@ -40,8 +72,44 @@ export default {
   components: {
     ChevronLeftIcon,
     ChevronRightIcon,
+    ChevronDoubleLeftIcon,
+    ChevronDoubleRightIcon,
     PaginationIndicatorButton,
     PaginationMobileButton,
+  },
+
+  props: {
+    currentPage: {
+      type: Number,
+      required: true,
+      validator(value) {
+        return value >= 0;
+      },
+    },
+    numberOfPages: {
+      type: Number,
+      required: true,
+      validator(value) {
+        return value >= 0;
+      },
+    },
+  },
+
+  emits: ["set-pagination-index"],
+
+  computed: {
+    currentPageUserVersion() {
+      return this.currentPage + 1;
+    },
+  },
+
+  methods: {
+    setPageIndex(index) {
+      this.$emit("set-pagination-index", index);
+    },
+    showPage(index) {
+      return this.currentPage - 2 <= index && index <= this.currentPage + 2;
+    },
   },
 };
 </script>

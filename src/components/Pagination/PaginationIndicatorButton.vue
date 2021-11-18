@@ -4,19 +4,14 @@
     class="
       relative
       items-center
-      px-4
       py-2
       border
       text-sm
       font-medium
-      first:rounded-l-md first:px-2
-      last:rounded-r-md last:px-2
+      first:rounded-l-md
+      last:rounded-r-md
     "
-    :class="
-      (showOnMobile ? 'inline-flex' : 'hidden md:inline-flex') +
-      ' ' +
-      activityClass
-    "
+    :class="activityClass + ' ' + (minWidth ? 'px-2' : 'px-4')"
   >
     {{ index }}
     <slot />
@@ -38,20 +33,20 @@ export default {
     link: {
       type: String,
       required: false,
-      default: "#/",
+      default: "#",
     },
-    showOnMobile: {
+    minWidth: {
       type: Boolean,
       required: false,
-      default: true,
+      default: false,
     },
   },
 
   computed: {
     activityClass() {
       return this.active
-        ? "bg-blue-50 border-blue-twitter text-blue-twitter-dark z-10"
-        : "bg-white border-gray-300 text-gray-500 hover:bg-gray-50";
+        ? "bg-blue-50 dark:bg-blue-900 border-blue-twitter text-blue-twitter-dark dark:text-blue-twitter dark:border-blue-twitter-dark z-10"
+        : "bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 hover:bg-gray-700";
     },
   },
 };

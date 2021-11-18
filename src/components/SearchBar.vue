@@ -1,6 +1,9 @@
 <template>
   <div class="my-3">
-    <label for="price" class="ml-1 block text-sm font-medium text-gray-700">
+    <label
+      for="price"
+      class="ml-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
+    >
       {{ label }}
     </label>
     <div class="mt-2 relative rounded-md shadow-sm max-w-sm">
@@ -16,7 +19,9 @@
           block
           w-full
           sm:text-sm
+          dark:text-gray-50 dark:bg-gray-800
           border-gray-300
+          dark:border-gray-700
           rounded-md
         "
         placeholder="Search..."
