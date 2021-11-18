@@ -12,7 +12,8 @@
   <TheMainContentFrame>
     <SearchBar v-model="searchText" label="Find an emoji" />
     <p class="ml-1 block text-xs dark:text-gray-500">
-      Showing {{ itemsPerPage }} of {{ filteredEmojiList.length }} matches
+      Showing {{ paginatedEmojiList.length }} of
+      {{ filteredEmojiList.length }} matches
     </p>
     <EmojiGrid
       @open-modal="$refs.modal.openModal($event)"
