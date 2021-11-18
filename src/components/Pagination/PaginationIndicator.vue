@@ -23,6 +23,7 @@
           <PaginationIndicatorButton
             :min-width="true"
             @click="setPageIndex(currentPage - 1)"
+            v-if="currentPage !== 0"
           >
             <span class="sr-only">Previous</span>
             <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
@@ -41,6 +42,7 @@
           <PaginationIndicatorButton
             @click="setPageIndex(currentPage + 1)"
             :min-width="true"
+            v-if="currentPage !== numberOfPages - 1"
           >
             <span class="sr-only">Next</span>
             <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
