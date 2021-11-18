@@ -16,7 +16,6 @@
         :key="product.codepoint"
         :href="'#/'"
         class="group"
-        v-show="showEmojiBox(product.codepoint)"
         @click="$emit('open-modal', product.codepoint)"
       >
         <div class="w-full aspect-w-1 aspect-h-1 rounded-xl overflow-hidden">
@@ -26,10 +25,7 @@
               product.codepoint.replace(/\s+/g, '-') +
               '.svg'
             "
-            @error="
-              $event.target.src = fallbackImage;
-              errorImages.push(product.codepoint);
-            "
+            @error="$emit('hide-item', product.codepoint)"
             :alt="product.name"
             class="
               w-full
@@ -61,22 +57,12 @@ export default {
       },
     },
   },
-  emits: ["open-modal"],
+  emits: ["open-modal", "hide-item"],
 
   methods: {
     capitalize(string) {
       return string.charAt(0).toUpperCase() + string.slice(1);
     },
-    showEmojiBox(codepoint) {
-      return !this.errorImages.includes(codepoint);
-    },
-  },
-
-  data() {
-    return {
-      fallbackImage: require("@/assets/unavailable.svg"),
-      errorImages: [],
-    };
   },
 };
 </script>
