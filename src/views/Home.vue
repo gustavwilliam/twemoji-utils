@@ -13,7 +13,7 @@
     <SearchBar v-model="searchText" label="Find an emoji" />
     <EmojiGrid
       @open-modal="this.$refs.modal.openModal($event)"
-      :products="filteredEmojiList"
+      :products="paginatedEmojiList"
     />
   </TheMainContentFrame>
   <EmojiDownloadModal ref="modal" />
@@ -41,6 +41,8 @@ export default {
     return {
       gridData: emojiData,
       searchText: "",
+      itemsPerPage: 45,
+      currentPage: 0,
     };
   },
 
@@ -52,6 +54,15 @@ export default {
           item.codepoint.includes(this.searchText.toLowerCase())
         );
       });
+    },
+    numberOfPages() {
+      return Math.floor(this.filteredEmojiList.length / this.itemsPerPage);
+    },
+    paginatedEmojiList() {
+      return this.filteredEmojiList.slice(
+        this.itemsPerPage * this.currentPage,
+        this.itemsPerPage * (this.currentPage + 1)
+      );
     },
   },
 };
