@@ -45,8 +45,8 @@ export default {
   computed: {
     activityClass() {
       return this.active
-        ? "bg-blue-50 border-blue-twitter text-blue-twitter-dark z-10"
-        : "bg-white border-gray-300 text-gray-500 hover:bg-gray-50";
+        ? "bg-blue-50 dark:bg-blue-900 border-blue-twitter text-blue-twitter-dark dark:text-blue-twitter dark:border-blue-twitter-dark z-10"
+        : "bg-white dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-50 hover:bg-gray-700";
     },
   },
 };
