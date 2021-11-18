@@ -10,6 +10,10 @@
           class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
+          <PaginationIndicatorButton @click="setPageIndex(0)">
+            <span class="sr-only">First</span>
+            <ChevronDoubleLeftIcon class="h-5 w-5" aria-hidden="true" />
+          </PaginationIndicatorButton>
           <PaginationIndicatorButton @click="setPageIndex(currentPage - 1)">
             <span class="sr-only">Previous</span>
             <ChevronLeftIcon class="h-5 w-5" aria-hidden="true" />
@@ -29,6 +33,10 @@
             <span class="sr-only">Next</span>
             <ChevronRightIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
+          <PaginationIndicatorButton @click="setPageIndex(numberOfPages - 1)">
+            <span class="sr-only">Last</span>
+            <ChevronDoubleRightIcon class="h-5 w-5" aria-hidden="true" />
+          </PaginationIndicatorButton>
         </nav>
       </div>
     </div>
@@ -36,7 +44,12 @@
 </template>
 
 <script>
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/vue/solid";
+import {
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronDoubleLeftIcon,
+  ChevronDoubleRightIcon,
+} from "@heroicons/vue/solid";
 import PaginationIndicatorButton from "./PaginationIndicatorButton.vue";
 import PaginationMobileButton from "./PaginationMobileButton.vue";
 
@@ -44,6 +57,8 @@ export default {
   components: {
     ChevronLeftIcon,
     ChevronRightIcon,
+    ChevronDoubleLeftIcon,
+    ChevronDoubleRightIcon,
     PaginationIndicatorButton,
     PaginationMobileButton,
   },

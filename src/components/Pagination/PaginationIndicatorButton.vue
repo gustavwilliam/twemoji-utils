@@ -12,11 +12,7 @@
       first:rounded-l-md first:px-2
       last:rounded-r-md last:px-2
     "
-    :class="
-      (showOnMobile ? 'inline-flex' : 'hidden md:inline-flex') +
-      ' ' +
-      activityClass
-    "
+    :class="activityClass"
   >
     {{ index }}
     <slot />
@@ -39,11 +35,6 @@ export default {
       type: String,
       required: false,
       default: "#/",
-    },
-    showOnMobile: {
-      type: Boolean,
-      required: false,
-      default: true,
     },
   },
 
