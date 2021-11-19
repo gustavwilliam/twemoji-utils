@@ -7,7 +7,7 @@
         v-if="currentPage !== 0"
       />
       <p class="text-gray-500 text-sm">
-        Page {{ currentPage }} of {{ numberOfPages }}
+        Page {{ currentPageUserVersion }} of {{ numberOfPages }}
       </p>
       <PaginationMobileButton
         content="Next"
