@@ -11,7 +11,7 @@
   />
   <TheMainContentFrame>
     <SearchBar v-model="searchText" label="Find an emoji" />
-    <p class="ml-1 block text-xs dark:text-gray-500">
+    <p class="ml-1 block text-xs text-gray-500">
       Showing {{ paginatedEmojiList.length }} of
       {{ filteredEmojiList.length }} matches
     </p>
