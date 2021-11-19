@@ -1,13 +1,18 @@
 <template>
-  <div class="px-4 py-3 flex items-center justify-between sm:px-6">
-    <div class="flex-1 flex justify-between sm:hidden">
+  <div class="px-2 py-3 flex items-center justify-between sm:px-6">
+    <div class="flex-1 flex justify-between items-center sm:hidden">
       <PaginationMobileButton
         content="Previous"
         @click="setPageIndex(currentPage - 1)"
+        v-if="currentPage !== 0"
       />
+      <p class="text-gray-500 text-sm">
+        Page {{ currentPage }} of {{ numberOfPages }}
+      </p>
       <PaginationMobileButton
         content="Next"
         @click="setPageIndex(currentPage + 1)"
+        v-if="currentPage !== numberOfPages - 1"
       />
     </div>
     <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-around">
