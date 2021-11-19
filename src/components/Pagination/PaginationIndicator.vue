@@ -21,7 +21,11 @@
           class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
           aria-label="Pagination"
         >
-          <PaginationIndicatorButton :min-width="true" @click="setPageIndex(0)">
+          <PaginationIndicatorButton
+            :min-width="true"
+            @click="setPageIndex(0)"
+            v-if="currentPage !== 0"
+          >
             <span class="sr-only">First</span>
             <ChevronDoubleLeftIcon class="h-5 w-5" aria-hidden="true" />
           </PaginationIndicatorButton>
@@ -55,6 +59,7 @@
           <PaginationIndicatorButton
             @click="setPageIndex(numberOfPages - 1)"
             :min-width="true"
+            v-if="currentPage !== numberOfPages - 1"
           >
             <span class="sr-only">Last</span>
             <ChevronDoubleRightIcon class="h-5 w-5" aria-hidden="true" />
