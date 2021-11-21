@@ -9,24 +9,26 @@
       },
     ]"
   />
-  <TheMainContentFrame>
-    <SearchBar v-model="searchText" label="Find an emoji" />
-    <p class="ml-1 block text-xs text-gray-500">
-      Showing {{ paginatedEmojiList.length }} of
-      {{ filteredEmojiList.length }} matches
-    </p>
-    <EmojiGrid
-      @open-modal="$refs.modal.openModal($event)"
-      @hide-item="hiddenItems.push($event)"
-      :products="paginatedEmojiList"
-    />
-    <PaginationIndicator
-      :currentPage="currentPage"
-      :numberOfPages="numberOfPages"
-      @set-pagination-index="currentPage = $event"
-    />
-  </TheMainContentFrame>
-  <EmojiDownloadModal ref="modal" />
+  <div>
+    <TheMainContentFrame>
+      <SearchBar v-model="searchText" label="Find an emoji" />
+      <p class="ml-1 block text-xs text-gray-500">
+        Showing {{ paginatedEmojiList.length }} of
+        {{ filteredEmojiList.length }} matches
+      </p>
+      <EmojiGrid
+        @open-modal="$refs.modal.openModal($event)"
+        @hide-item="hiddenItems.push($event)"
+        :products="paginatedEmojiList"
+      />
+      <PaginationIndicator
+        :currentPage="currentPage"
+        :numberOfPages="numberOfPages"
+        @set-pagination-index="currentPage = $event"
+      />
+    </TheMainContentFrame>
+    <EmojiDownloadModal ref="modal" />
+  </div>
   <TheFooter />
 </template>
 

@@ -9,11 +9,13 @@
       },
     ]"
   />
-  <ErrorMessagePage
-    errorCode="404"
-    header="Page not found"
-    description="Sorry, but the page you're looking for doesn't seem to exist."
-  />
+  <div>
+    <ErrorMessagePage
+      errorCode="404"
+      header="Page not found"
+      description="Sorry, but the page you're looking for doesn't seem to exist."
+    />
+  </div>
   <TheFooter />
 </template>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="" class="h-full">
 
 <head>
   <meta charset="utf-8">
@@ -32,13 +32,13 @@
   <meta name="twitter:image" content="https://gustavwilliam.github.io/twemoji-utils/og-image.png">
 </head>
 
-<body class="dark:bg-gray-900">
+<body class="dark:bg-gray-900 h-full min-h-full">
   <noscript>
     <strong>We're sorry, but Twemoji Utils doesn't work properly without JavaScript enabled.
       Please enable it to continue.</strong>
   </noscript>
 
-  <div id="app">
+  <div id="app" class="h-full grid" style="grid-template-rows: auto 1fr auto;">
     <router-view></router-view>
   </div>
   <!-- built files will be auto injected -->
