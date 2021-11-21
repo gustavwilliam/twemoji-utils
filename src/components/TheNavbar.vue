@@ -29,7 +29,7 @@
             sm:items-stretch sm:justify-start
           "
         >
-          <div class="flex-shrink-0 flex items-center">
+          <a href="/" class="flex-shrink-0 flex items-center">
             <img
               class="block lg:hidden h-8 w-auto"
               src="../assets/logo/logo-full-color-light.svg"
@@ -40,7 +40,7 @@
               src="../assets/logo/logo-full-color-light.svg"
               alt="Twemoji Utils"
             />
-          </div>
+          </a>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
               <a
