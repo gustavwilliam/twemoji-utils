@@ -1,7 +1,7 @@
 <template>
   <div class="my-3">
     <label
-      for="price"
+      for="searchBar"
       class="ml-1 block text-sm font-medium text-gray-700 dark:text-gray-300"
     >
       {{ label }}
