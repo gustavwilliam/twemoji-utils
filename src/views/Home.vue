@@ -27,11 +27,13 @@
     />
   </TheMainContentFrame>
   <EmojiDownloadModal ref="modal" />
+  <TheFooter />
 </template>
 
 <script>
 import TheNavbar from "@/components/TheNavbar.vue";
 import TheMainContentFrame from "@/components/TheMainContentFrame.vue";
+import TheFooter from "@/components/TheFooter.vue";
 import EmojiGrid from "@/components/EmojiGrid.vue";
 import EmojiDownloadModal from "@/components/EmojiDownloadModal.vue";
 import SearchBar from "@/components/SearchBar.vue";
@@ -43,6 +45,7 @@ export default {
   components: {
     TheNavbar,
     TheMainContentFrame,
+    TheFooter,
     EmojiGrid,
     EmojiDownloadModal,
     SearchBar,
