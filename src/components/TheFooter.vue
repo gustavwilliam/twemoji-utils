@@ -58,6 +58,19 @@
             />
             <span class="sr-only">GitHub</span>
           </a>
+          <a
+            href="https://twitter.com/gustavodinger"
+            target="_blank"
+            class="hover:text-gray-50 flex flex-row space-x-3"
+          >
+            <img
+              class="w-6 h-6"
+              aria-hidden="true"
+              src="@/assets/social-icons/twitter.svg"
+              alt="Twitter logo"
+            />
+            <span class="sr-only">Twitter</span>
+          </a>
         </div>
       </div>
     </div>
