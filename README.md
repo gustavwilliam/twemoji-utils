@@ -24,6 +24,7 @@ Twemoji Utils has the following features to aid you in finding the perfect Twemo
     - 256x256 px
     - 512x512 px
 - Open source & free to use
+- Dark mode, for you programmers out there
 
 
 ## Project setup
