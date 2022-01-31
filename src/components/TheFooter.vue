@@ -34,14 +34,13 @@
           target="_blank"
           class="underline hover:text-gray-50"
           >free to use</a
-        >. Thanks to
+        >. This site was made by
         <a
           href="https://github.com/gustavwilliam/"
           target="_blank"
           class="underline hover:text-gray-50"
           >Gustav Odinger</a
-        >
-        for creating this site.
+        >.
       </div>
       <div class="flex flex-col items-start sm:items-end max-w-screen-xl">
         <div class="flex items-center space-x-2">
