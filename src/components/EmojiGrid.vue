@@ -1,12 +1,12 @@
 <template>
-  <div class="my-8 md:my-10">
+  <div class="mt-8 mb-2">
     <h2 class="sr-only">Products</h2>
     <div class="
-        grid grid-cols-3
-        gap-4
-        sm:grid-cols-5
-        lg:grid-cols-8
-        xl:grid-cols-9 xl:gap-x-8
+        grid grid-cols-4
+        gap-2
+        sm:grid-cols-6
+        lg:grid-cols-10
+        xl:grid-cols-12
       ">
       <a v-for="product in products" :key="product.codepoint" :href="'#/'" class="group bg-white p-4 rounded-xl"
         @click="$emit('open-modal', [product.codepoint, product.name])">

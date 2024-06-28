@@ -51,7 +51,7 @@ export default {
       gridData: emojiData,
       hiddenItems: [],
       searchText: "",
-      itemsPerPage: 45,
+      itemsPerPage: 60,
       currentPage: 0,
     };
   },

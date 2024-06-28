@@ -8,7 +8,7 @@
       </a>
     </div>
   </div>
-  <div class="max-w-2xl mx-auto py-6 px-4 sm:py-8 sm:px-6 lg:max-w-7xl lg:px-8">
+  <div class="max-w-2xl mx-auto pt-4 pb-12 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <slot />
   </div>
 </template>
