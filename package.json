@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "deploy": "git subtree push --prefix dist origin gh-pages",
+    "force-deploy": "git push origin `git subtree split --prefix dist main`:gh-pages --force",
     "full-deploy": "yarn build && git add dist && git commit -m 'Build and deploy' && yarn deploy"
   },
   "dependencies": {
