@@ -1,5 +1,5 @@
 <template>
-  <div class="my-12">
+  <div class="my-8 md:my-10">
     <h2 class="sr-only">Products</h2>
     <div class="
         grid grid-cols-3
