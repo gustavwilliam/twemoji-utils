@@ -1,14 +1,12 @@
 <template>
-  <TheNavbar
-    :navigation="[
-      { name: 'Home', href: '/', current: true },
-      {
-        name: 'GitHub',
-        href: 'https://github.com/gustavwilliam/twemoji-utils',
-        current: false,
-      },
-    ]"
-  />
+  <TheNavbar :navigation="[
+    { name: 'Home', href: '/', current: true },
+    {
+      name: 'GitHub',
+      href: 'https://github.com/gustavwilliam/twemoji-utils',
+      current: false,
+    },
+  ]" />
   <div>
     <TheMainContentFrame>
       <SearchBar v-model="searchText" label="Find an emoji" />
@@ -16,16 +14,10 @@
         Showing {{ paginatedEmojiList.length }} of
         {{ filteredEmojiList.length }} matches
       </p>
-      <EmojiGrid
-        @open-modal="$refs.modal.openModal($event)"
-        @hide-item="hiddenItems.push($event)"
-        :products="paginatedEmojiList"
-      />
-      <PaginationIndicator
-        :currentPage="currentPage"
-        :numberOfPages="numberOfPages"
-        @set-pagination-index="currentPage = $event"
-      />
+      <EmojiGrid @open-modal="$refs.modal.openModal($event)" @hide-item="hiddenItems.push($event)"
+        :products="paginatedEmojiList" />
+      <PaginationIndicator :currentPage="currentPage" :numberOfPages="numberOfPages"
+        @set-pagination-index="currentPage = $event" />
     </TheMainContentFrame>
     <EmojiDownloadModal ref="modal" />
   </div>
