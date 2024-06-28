@@ -13,12 +13,8 @@
             </span>
           </p>
         </div>
-        <div
-          class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto"
-        >
-          <a
-            :href="url"
-            class="
+        <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+          <a :href="url" class="
               flex
               items-center
               justify-center
@@ -32,15 +28,12 @@
               text-blue-twitter-dark
               bg-white
               hover:bg-indigo-50
-            "
-          >
+            ">
             {{ cta }}
           </a>
         </div>
         <div class="order-2 flex-shrink-0 sm:order-3 sm:ml-3">
-          <button
-            type="button"
-            class="
+          <button type="button" class="
               -mr-1
               flex
               p-2
@@ -48,9 +41,7 @@
               hover:bg-blue-twitter-dark
               focus:outline-none focus:ring-2 focus:ring-white
               sm:-mr-2
-            "
-            @click="visible = false"
-          >
+            " @click="visible = false">
             <span class="sr-only">Dismiss</span>
             <XIcon class="h-6 w-6 text-white" aria-hidden="true" />
           </button>
