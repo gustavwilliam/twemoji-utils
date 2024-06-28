@@ -1,31 +1,32 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ['./public/**/*.html', './src/**/*.vue'],
+  purge: ["./public/**/*.html", "./src/**/*.vue"],
   darkMode: "media",
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         blue: {
           twitter: {
             DEFAULT: "#1DA1F2",
             dark: "#0d8ddb",
-          }
-        }
+          },
+        },
       },
     },
   },
   variants: {
     extend: {
-      padding: ['first', 'last'],
-      borderRadius: ['first', 'last'],
+      padding: ["first", "last"],
+      borderRadius: ["first", "last"],
+      translate: ["group-hover", "hover"],
     },
   },
   plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
   ],
-}
+};

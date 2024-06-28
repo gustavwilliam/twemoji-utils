@@ -71,7 +71,7 @@
                     copyToClipboard(codepoint.replace(/\s+/g, '-'));
                     copied = true;
                   }"
-                    class="p-2 mt-3 mb-5 w-full m-0 rounded-md bg-gray-100 text-gray-700 border font-mono uppercase flex items-center justify-between">
+                    class="p-2 mt-3 mb-5 w-full m-0 rounded-md bg-gray-100 dark:text-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-700 border dark:border-gray-700 font-mono uppercase flex items-center justify-between">
                     <span>
                       {{ codepoint.replace(/\s+/g, '-') }}
                     </span>
@@ -85,7 +85,7 @@
                     </div>
                   </button>
                   <div class="mt-2">
-                    <p class="text-sm text-gray-500">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">
                       Select your preferred format to begin the download.
                     </p>
                   </div>
@@ -170,7 +170,7 @@
                   text-gray-700
                   dark:text-gray-300
                   hover:bg-gray-50
-                  dark:hover:bg-gray-800
+                  dark:hover:bg-gray-600
                   focus:outline-none focus:ring-2 focus:ring-offset-2
                   dark:ring-offset-gray-800
                   focus:ring-blue-twitter
