@@ -9,7 +9,7 @@
         xl:grid-cols-12
       ">
       <a v-for="product in products" :key="product.codepoint" :href="'#/'"
-        class="group bg-white dark:bg-gray-800 border dark:border-gray-700 p-3 md:p-4 rounded-xl transform transition-all hover:-translate-y-1 shadow-sm hover:shadow-md"
+        class="group bg-white dark:bg-gray-800 dark:border-gray-700 p-3 md:p-4 rounded-xl transform transition-all hover:-translate-y-1 shadow-sm hover:shadow-md"
         @click="$emit('open-modal', [product.codepoint, product.name])">
         <div class="w-full aspect-w-1 aspect-h-1 rounded-md overflow-hidden">
           <img :src="'https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/' +
